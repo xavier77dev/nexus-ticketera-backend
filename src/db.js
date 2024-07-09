@@ -5,7 +5,7 @@ const TicketModel = require("./models/Ticket");
 let CompanyModel = require("./models/Company");
 let RecordModel = require('./models/Record')
 
-const sequelize = new Sequelize(import.env.DATABASE_URL);
+const sequelize = new Sequelize(process.env.DATABASE_URL);
 
 // const sequelize = new Sequelize(
 //   {
