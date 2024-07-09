@@ -1,9 +1,11 @@
 const app = require("./src/app")
 const { sequelize } = require("./src/db")
 
-app.listen(3001, () => {
-    sequelize.sync({ alter: true })
-    console.log("Servidor funcionando en el puerto 3001")
+const port = process.env.PORT || 3001;
+
+app.listen(port, () => {
+  sequelize.sync({ alter: true })
+  console.log("Servidor funcionando en el puerto 3001")
 })
 
 
