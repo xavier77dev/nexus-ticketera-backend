@@ -19,6 +19,9 @@ const pool = new pg.Pool({
 //   host: "localhost",
 //   dialect: "postgres"
 // })
+const sequelize = new Sequelize(
+  process.env.DATABASE_URL
+)
 
 UserModel(sequelize);
 TicketModel(sequelize);
