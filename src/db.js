@@ -5,20 +5,22 @@ const TicketModel = require("./models/Ticket");
 let CompanyModel = require("./models/Company");
 let RecordModel = require('./models/Record')
 
-const sequelize = new Sequelize(
-  {
-    username: process.env.DB_USER,
-    database: process.env.DB_NAME,
-    password: process.env.DB_PASSWORD,
-    host: process.env.DB_HOST,
-    dialect: "postgres",
-    dialectOptions: {
-      ssl: {
-        require: true,
-      }
-    },
-  }
-)
+const sequelize = new Sequelize(import.env.DATABASE_URL);
+
+// const sequelize = new Sequelize(
+//   {
+//     username: process.env.DB_USER,
+//     database: process.env.DB_NAME,
+//     password: process.env.DB_PASSWORD,
+//     host: process.env.DB_HOST,
+//     dialect: "postgres",
+//     dialectOptions: {
+//       ssl: {
+//         require: true,
+//       }
+//     },
+//   }
+// )
 
 
 UserModel(sequelize);
