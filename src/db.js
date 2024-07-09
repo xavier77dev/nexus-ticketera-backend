@@ -5,23 +5,21 @@ const TicketModel = require("./models/Ticket");
 let CompanyModel = require("./models/Company");
 let RecordModel = require('./models/Record')
 
-// const pg = require('pg')
-
-// const pool = new pg.Pool({
-//   connectionString: process.env.DATABASE_URL
-// })
-
-// console.log(pool)
-//     process.env.DATABASE_URL
-//     )
-
-///
-//   host: "localhost",
-//   dialect: "postgres"
-// })
 const sequelize = new Sequelize(
-  process.env.DATABASE_URL
+  {
+    username: process.env.DB_USER,
+    database: process.env.DB_NAME,
+    password: process.env.DB_PASSWORD,
+    host: process.env.DB_HOST,
+    dialect: "postgres",
+    dialectOptions: {
+      ssl: {
+        require: true,
+      }
+    },
+  }
 )
+
 
 UserModel(sequelize);
 TicketModel(sequelize);
