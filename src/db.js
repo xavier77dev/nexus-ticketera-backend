@@ -5,7 +5,7 @@ const TicketModel = require("./models/Ticket");
 let CompanyModel = require("./models/Company");
 let RecordModel = require('./models/Record')
 
-const pg = require('pg')
+// const pg = require('pg')
 
 // const pool = new pg.Pool({
 //   connectionString: process.env.DATABASE_URL
